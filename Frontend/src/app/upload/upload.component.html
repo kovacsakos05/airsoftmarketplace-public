@@ -1,0 +1,124 @@
+<form class="form text-danger">
+    <div class="d-flex justify-content-center">
+        <mat-form-field>
+            <mat-label>Termék</mat-label>
+            <mat-select [(value)]="selected">
+              <mat-option value="kiegeszito">Kiegészítő</mat-option>
+              <mat-option value="fegyver">Fegyver</mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div>
+  
+
+  <div *ngIf="selected === 'kiegeszito'">
+    <div class="form-group mb-2">
+      <label>Név</label>
+      <input type="text" class="form-control" [(ngModel)]="kiegeszito.nev" name="nev" />
+    </div>
+
+    <div class="form-group mb-2">
+      <label>Típus</label>
+      <input type="text" class="form-control" [(ngModel)]="kiegeszito.tipus" name="tipus" />
+    </div>
+
+    <div class="form-group mb-2">
+      <label>Ár</label>
+      <input type="number" class="form-control" [(ngModel)]="kiegeszito.ar" name="ar" />
+    </div>
+
+    <div class="form-group mb-2">
+      <label>Leírás</label>
+      <textarea class="form-control" [(ngModel)]="kiegeszito.leiras" name="leiras"></textarea>
+    </div>
+    <div class="text-center">
+        <p>3 kép feltöltése kötelező</p>
+      </div>
+    <div class="d-flex justify-content-around flex-wrap">
+        <div class="form-group mb-2">
+            <label class="me-2">Kép1</label>
+            <input type="file" accept="image/*" (change)="onFileSelected($event, 1, 'kiegeszito')" />
+          </div>
+          <div class="form-group mb-2">
+            <label class="me-2">Kép2</label>
+            <input type="file" accept="image/*" (change)="onFileSelected($event, 2, 'kiegeszito')" />
+          </div>
+          <div class="form-group mb-2">
+            <label class="me-2">Kép3</label>
+            <input type="file" accept="image/*" (change)="onFileSelected($event, 3, 'kiegeszito')"/>
+          </div>
+      </div>
+  </div>
+
+  <div *ngIf="selected === 'fegyver'">
+    <div class="form-group mb-2">
+      <label>Név</label>
+      <input type="text" class="form-control" [(ngModel)]="fegyver.nev" name="nev" />
+      </div>
+      <div class="form-group mb-2">
+        <label>Típus</label>
+        <input type="text" class="form-control" [(ngModel)]="fegyver.tipus" name="tipus" />
+      </div>
+      
+      <div class="form-group mb-2">
+        <label>Ár</label>
+        <input type="number" class="form-control" [(ngModel)]="fegyver.ar" name="ar" />
+      </div>
+      
+      <div class="form-group mb-2">
+        <label>Leírás</label>
+        <textarea class="form-control" [(ngModel)]="fegyver.leiras" name="leiras"></textarea>
+          </div>
+      <div class="form-group mb-2">
+        <label>Mechanika</label>
+        <input type="text" class="form-control" [(ngModel)]="fegyver.mechanika" name="mechanika" />
+      </div>
+      <div class="form-group mb-2">
+        <label>FPS</label>
+        <input type="number" class="form-control" [(ngModel)]="fegyver.fps" name="fps" />
+      </div>
+      <div class="form-group mb-2">
+        <label>Súly</label>
+        <input type="number" class="form-control" [(ngModel)]="fegyver.suly" name="suly" />
+      </div>
+      <div class="form-group mb-2">
+        <label>Hossza</label>
+        <input type="number" class="form-control" [(ngModel)]="fegyver.hossza" name="hossza" />
+      </div>
+      <div class="form-group mb-2">
+        <label>Csőhossz</label>
+        <input type="number" class="form-control" [(ngModel)]="fegyver.csohossza" name="csohossz" />
+      </div>
+      <div class="form-group mb-2">
+        <label>Tűzmód</label>
+        <input type="text" class="form-control" [(ngModel)]="fegyver.tuzmod" name="tuzmod" />
+      </div>
+      <div class="text-center">
+        <p>3 kép feltöltése kötelező</p>
+      </div>
+      <div class="d-flex justify-content-around flex-wrap">
+        <div class="form-group mb-2">
+            <label class="me-2">Kép1</label>
+            <input type="file" accept="image/*" (change)="onFileSelected($event, 1, 'fegyver')" />
+          </div>
+          <div class="form-group mb-2">
+            <label class="me-2">Kép2</label>
+            <input type="file" accept="image/*" (change)="onFileSelected($event, 2, 'fegyver')" />
+          </div>
+          <div class="form-group mb-2">
+            <label class="me-2">Kép3</label>
+            <input type="file" accept="image/*" (change)="onFileSelected($event, 3, 'fegyver')"/>
+          </div>
+      </div>
+      
+    </div>
+    <div class="d-flex justify-content-center" *ngIf="selected">
+        <p id="error" class="text-danger"></p>
+    </div>
+    <div class="d-flex justify-content-center" *ngIf="selected">
+      <p id="sikeres" class="text-success"></p>
+  </div>
+    <div class="d-flex justify-content-center" *ngIf="selected">
+        <button class="btn btn-outline-danger mt-2" type="submit" (click)="feltoltes()">Feltöltés</button>
+    </div>
+    
+</form>

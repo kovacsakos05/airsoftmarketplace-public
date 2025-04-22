@@ -1,0 +1,95 @@
+<div class="container-fluid fantasy animated animatedFadeInUp fadeInUp" style="background-color: rgba(10, 10, 10, 0.5); height: auto;">
+    <div *ngIf="fegyverek1==undefined; else elseblokk">
+    <div class="row">
+        <div class="col-12 text-center text-danger opacity-75 bg-dark">
+            <h1 class="fantasy">Fegyverek</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center">
+            <div class="d-flex justify-content-around flex-wrap" style="gap: 20px; margin: 5%;">
+                <div *ngFor="let f of fegyverek, let i = index">
+                    <div class="card border-4 border-danger fantasy bg-dark text-white" style="width:400px;">
+                        <div class="card-body">
+                          <h4 class="card-title">{{f.nev}}</h4>
+                          <p class="card-text">{{f.leiras}}</p>
+                          <p class="card-text">{{f.ar}} HUF</p>
+                          <button class="btn btn-danger" (click)="showGun(f.id)">Megnézem</button>
+                        </div>
+                        <img class="card-img-bottom d-block w-100 object-fit-cover" [src]="f.fegyverek_img1" alt="Card image" 
+                        style="height: 300px;">
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <ng-template #elseblokk class="animated animatedFadeInUp fadeInUp">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-around flex-wrap m-2">
+                    <div style="width:100vh; height:auto">
+                        <div id="demo" class="carousel slide border border-4 border-danger m-2" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                              <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                              <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                              <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                            </div>
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img [src]="fegyverek1?.fegyverek_img1" alt="kep1" class="d-block w-100 object-fit-cover" 
+                                style="height: 500px;">
+                              </div>
+                              <div class="carousel-item">
+                                <img [src]="fegyverek1?.fegyverek_img2" alt="kep2" class="d-block w-100 object-fit-cover" 
+                                style="height: 500px;">
+                              </div>
+                              <div class="carousel-item">
+                                <img [src]="fegyverek1?.fegyverek_img3" alt="kep3" class="d-block w-100 object-fit-cover" 
+                                style="height: 500px;">
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                              <span class="carousel-control-next-icon"></span>
+                            </button>
+                          </div>
+                        </div>
+                            <div class="card border-4 border-danger opacity-75" style="width:50vh; height:auto">
+                            <div class="card-body text-center">
+                                <p class="card-text">{{fegyverek1?.leiras}}</p>
+                                <h4 class="card-title">Paraméterek:</h4>
+                            <div class="card-text">
+                                <p>Tipus: {{fegyverek1?.tipus}}</p>
+                                <p>Mechanika: {{fegyverek1?.mechanika}}</p>
+                                <p>Erősség: {{fegyverek1?.fps}}</p>
+                                <p>Súly: {{fegyverek1?.suly}}</p>
+                                <p>Hossz: {{fegyverek1?.hossza}}</p>
+                                <p>Cső hossza: {{fegyverek1?.csohossza}}</p>
+                                <p>Tűzmód: {{fegyverek1?.tuzmod}}</p>
+                                <p>Ár: {{fegyverek1?.ar}} HUF</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-3 d-flex justify-content-center">
+                    <div class="card border-4 border-danger opacity-75 m-2" style="width:200vh; height:auto">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <h4 class="card-title">{{fegyverek1?.nev}}</h4>
+                                <p>{{fegyverek1?.tulajdonos?.nev}}<br>
+                                    Telefonszám: +36 {{fegyverek1?.tulajdonos?.telefonszam}}<br>
+                                Email: {{fegyverek1?.tulajdonos?.email}}</p>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <button class="btn btn-danger" (click)="alpaErtek()">Vissza</button>
+                                <p id="error" class="text-danger"></p>
+                                <button class="btn btn-success" (click)="goToPurchase(fegyverek1?.id!, 'fegyver')">Megveszem</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </ng-template>
+</div>

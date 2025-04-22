@@ -1,0 +1,50 @@
+<div class="container mt-5">
+    <h2>Rendelési adatok</h2>
+    <form (ngSubmit)="submitRendeles()">
+      <div class="mb-3">
+        <label for="vezeteknev">Vezetéknév</label>
+        <input type="text" class="form-control" [(ngModel)]="formData.vezeteknev" name="vezeteknev" required>
+      </div>
+      <div class="mb-3">
+        <label for="keresztnev">Keresztnév</label>
+        <input type="text" class="form-control" [(ngModel)]="formData.keresztnev" name="keresztnev" required>
+      </div>
+      <div class="mb-3">
+        <label for="iranyitoszam">Irányítószám</label>
+        <input type="number" class="form-control" [(ngModel)]="formData.iranyitoszam" name="iranyitoszam" required>
+      </div>
+      <div class="mb-3">
+        <label for="varos">Város</label>
+        <input type="text" class="form-control" [(ngModel)]="formData.varos" name="varos" required>
+      </div>
+      <div class="mb-3">
+        <label for="utca_hazszam">Utca, házszám</label>
+        <input type="text" class="form-control" [(ngModel)]="formData.utca_hazszam" name="utca_hazszam" required>
+      </div>
+      <div class="mb-3 d-flex justify-content-center">
+        <mat-form-field appearance="outline">
+          <mat-label>Szállítási mód</mat-label>
+          <mat-select [(ngModel)]="formData.kiszallitasok_id" name="kiszallitasok_id" required (selectionChange)="KiszallitasAr($event.value)">
+            <mat-option value="">Válassz...</mat-option>
+            <mat-option *ngFor="let sz of kiszallitasok" [value]="sz.id">
+              {{ sz.kiszallitas_fajta }} ({{ sz.kiszallitas_ara }} Ft)
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="text-center">
+        <p>Termék ár: {{termekar}} Ft</p>
+        <p>Kiszállítás: {{kiszallitasara}} Ft</p>
+        <p>Összes: {{osszar}} Ft</p>
+        <div class="d-flex justify-content-center">
+          <h3 class="bg-danger text-white p-2 w-50 text-center rounded">Kizárólag utánvétellel lehet fizetni!</h3>
+        </div>
+      </div>
+      <div id="sikeres" class="text-success mt-2 text-center"></div>
+      <div id="sikertelen" class="text-danger mt-2 text-center"></div>
+      <div class="text-center">
+        <button class="btn btn-success" type="submit">Rendelés leadása</button>
+        <div id="error" class="text-danger mt-2"></div>
+      </div>
+    </form>
+  </div>

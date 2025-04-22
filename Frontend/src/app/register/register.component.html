@@ -1,0 +1,49 @@
+<div class="register animated animatedFadeInUp fadeInUp">
+    <div class="register__content">
+      <h2 class="mb-5">Regisztráció</h2>
+      <form #registerForm="ngForm" (ngSubmit)="register()">
+        <div class="form_group">
+          <input type="text" placeholder="Felhasználónév" class="form-control" [(ngModel)]="felhasznalonev" name="felhasznalonev" />
+        </div>
+        <div class="form_group">
+          <input
+            type="email"
+            placeholder="Email"
+            class="form-control"
+            [(ngModel)]="felhasznaloemail"
+            name="felhasznaloemail"
+            required
+            pattern=".+@.+\..+"
+            title="Adj meg egy érvényes email címet"
+          />
+        </div>
+        <div class="form_group">
+          <input type="password" placeholder="Jelszó" class="form-control" [(ngModel)]="felhasznalojelszo" name="felhasznalojelszo"/>
+        </div>
+        <div class="form_group">
+          <input type="password" placeholder="Jelszó ellenörzése" class="form-control" [(ngModel)]="felhasznalojelszo2" name="felhasznalojelszo2" />
+        </div>
+        <div class="form_group">
+          <input type="date" class="form-control" placeholder="Születési dátum" [(ngModel)]="felhasznaloszuldatum" name="felhasznaloszuldatum" />
+        </div>
+        <div class="form_group d-flex">
+          <span class="input-group-text bg-light border border-secondary">+36</span>
+          <input
+          type="text"
+          class="form-control"
+          placeholder="Telefonszám"
+          [(ngModel)]="felhasznalotelefonszam"
+          name="felhasznalotelefonszam"
+          maxlength="9"
+          required
+        />
+        </div>
+        <button type="submit" class="btn btn-primary">Regisztráció</button>
+      </form>
+
+      <div class="text-center" *ngIf="visszajelzes" [ngClass]="{ 'text-danger': hiba, 'text-success': sikeres }">
+        <p class="p-1">{{visszajelzes}}</p>
+        <p *ngIf="sikeres">Átnavigálás a belépés oldalra</p>
+      </div>
+    </div>
+  </div>

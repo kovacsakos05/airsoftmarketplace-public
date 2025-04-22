@@ -1,0 +1,248 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+body {
+    font-family: fantasy;
+    background-image: url('assets/img/background2.jpg');
+    background-repeat: no-repeat;
+    background-position: fixed;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+#navbar{
+    background-color: #000000; 
+    font-family: fantasy;
+    font-size: 2vmin;
+    position: sticky;
+}
+.fantasy{
+    font-family: fantasy;
+}
+
+#home1_1{
+    height: 100vh;
+}
+
+#home1_2{
+    height: 15vmin;  
+    background-color: rgba(0, 0, 0, 0.75); 
+    font-family: fantasy;
+}
+
+#home1_2_button{
+    width: auto; 
+    height: 10vmin; 
+    font-size: 5vmin;
+}
+
+#home1_3{
+    width: 55%;
+    font-size: 3vmin;
+    border-top: 5px solid rgba(255, 0, 0, 0.5);
+    border-bottom: 5px solid rgba(255, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    
+}
+
+#home2_1{
+    height: auto;
+    width: auto;
+}
+
+#home2_2{
+    border-radius: 20px;
+    width: 100%;
+
+}
+
+#home2_3{
+    border-radius: 20px;
+    width: 100%;
+}
+
+#footer1{
+    background-color: rgba(0, 0, 0, 0.8);
+    font-family: fantasy;
+    border-top: solid 5px red;
+    border-bottom: solid 5px red;
+    font-size: 2vh;
+    
+}
+#footer2{
+    background-color: #000000;
+    font-family: fantasy;
+}
+
+.list_none{
+    list-style: none;
+    
+}
+
+#footer1_1{
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+}
+
+#home_card{
+    margin: 5%;
+    padding: 5%;
+    background-color: rgba(150, 0, 0, 0.5);
+    border: solid 1px red;
+    border-radius: 15px;
+    height: auto;
+    width: 50vh;
+}
+
+#home_card_img{
+    width: 100%;
+    height: 30vh;
+}
+
+#home_card_main{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 1.5vmin;
+}
+
+.register{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register__content{
+    height: auto;
+    width: 30%;
+    border: solid 1px red;
+    border-radius: 15px;
+    padding: 5%;
+    background-color: rgba(255, 255, 255, 0.75);
+    text-align: center;
+    color: red;
+}
+.form_group{
+    margin: 10px;   
+}
+.login{
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile{
+    border: solid 1px red;
+    border-radius: 15px;
+    padding: 5%;
+    background-color: rgba(255, 255, 255, 0.75);
+    color: red;
+    margin: 3% 10% 3% 10%;
+    font-family: fantasy;
+}
+
+.login_content{
+    height: auto;
+    width: 30%;
+    border: solid 1px red;
+    border-radius: 15px;
+    padding: 5%;
+    background-color: rgba(255, 255, 255, 0.75);
+    text-align: center;
+    color: red;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 5%;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile_info {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile_info img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #d9534f;
+}
+
+.card{
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    min-width: 400px;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}
+
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: both
+}
+
+.animatedFadeInUp {
+    opacity: 0
+}
+
+.fadeInUp {
+    opacity: 0;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+}
+
+@media screen and (max-width: 1250px) {
+    body{
+        font-family: fantasy, copperplate, cursive;
+        background-image: url('assets/img/background_2.svg');
+        background-repeat: no-repeat;
+        background-position: fixed;
+        background-attachment: fixed;
+        background-size: 100%;
+    }
+}
+@media screen and (max-width: 350px) {
+    body{
+        font-family: fantasy, copperplate, cursive;
+        background-image: none;
+        background-repeat: no-repeat;
+        background-position: fixed;
+        background-attachment: fixed;
+        background-size: 100%;
+    }
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

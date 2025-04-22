@@ -1,0 +1,75 @@
+
+<div class="container-fluid animated animatedFadeInUp fadeInUp">
+    <div class="row d-flex justify-content-center" id="home1_1">
+      <div class="col-12 text-center text-white border-bottom border-danger border-5" id="home1_2">
+        <h1 style="font-size: 12vmin;">AirSoftMarket</h1>
+        <a href="#home2_1"><button class="btn btn-danger m-4" id="home1_2_button">Termékek</button></a>
+        <div class="d-flex justify-content-center">
+          <div id="home1_3" class="text-secondary-emphasis mt-5 t-2">
+            <p>A csapatunk egy adok-veszek weboldalt hozott létre az airsoft közösségnek.</p>
+            <p>A weboldalunkra feltölthetőek fegyverek és kiegészítők is egyaránt.</p>
+            <p>Tölts fel egy eladni kívánt terméket, majd nézzd meg a többi felhasznaló termékeit is.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div id="home2_1" >
+        <div class="row" (window:scroll)="animation('animation1',110)">
+          <div class="col-12 d-flex justify-content-center" id="animation1">
+            <div >
+              <h1 class="text-center text-white bg-danger p-2" id="home2_2">Termékek</h1>
+            </div>
+          </div>
+        </div>
+        <div class="row" (window:scroll)="animation('animation2',150)">
+          <div class="col-12" id="animation2">
+            <h2 class="text-start text-danger bg-white p-2" id="home2_3">Fegyverek:</h2>
+          </div>
+        </div>
+        <div class="row" (window:scroll)="animation('animation3',170)">
+          <div class="col-12" id="animation3">
+            <div class="d-flex justify-content-around flex-wrap">
+              <div *ngFor="let f of fegyverek | slice:0:3">
+                <div id="home_card" class="fantasy">
+                  <div id="home_card_img">
+                    <img [src]="f.fegyverek_img1" alt="" class="d-block w-100 object-fit-cover" style="height: 250px;">
+                  </div>
+                  <div id="home_card_main">
+                    <h3 class="text-white">{{f.nev}}</h3>
+                    <p class="text-white">{{f.leiras}}</p>
+                    <button class="btn btn-danger" [routerLink]="['/ad-guns', f.id]">Megnézem</button>
+                  </div> 
+                </div> 
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" (window:scroll)="animation('animation4',800)">
+          <div class="col-12" id="animation4">
+            <h2 class="text-start text-danger bg-white p-2" id="home2_3">Kiegészítők:</h2>
+          </div>
+        </div>
+        <div class="row" (window:scroll)="animation('animation6',900)">
+          <div class="col-12" id="animation6">
+            <div class="d-flex justify-content-around flex-wrap">
+              <div *ngFor="let k of kiegeszitok | slice:0:3">
+                <div id="home_card" class="fantasy">
+                  <div id="home_card_img">
+                    <img [src]="k.kiegeszitok_img1" alt="" class="d-block w-100 object-fit-cover" style="height: 250px;">
+                  </div>
+                  <div id="home_card_main">
+                    <h3 class="text-white">{{k.nev}}</h3>
+                    <p class="text-white">{{k.leiras}}</p>
+                    <button class="btn btn-danger" [routerLink]="['/ad-supplementarys', k.id]">Megnézem</button>
+                  </div> 
+                </div> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+
+

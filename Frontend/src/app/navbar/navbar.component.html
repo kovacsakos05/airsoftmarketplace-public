@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg" data-bs-theme="dark" id="navbar" (window:scroll)="NavbarFix()">
+    <div class="container-fluid">
+      <a class="navbar-brand text-danger animated animatedFadeInUp fadeInUp" style="font-size: 4vmin;" href="#"><img src="assets/img/home_cim_fele.png" alt="" width="50" height="44"> AirSoftMarket</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active text-danger animated animatedFadeInUp fadeInUp" aria-current="page" routerLink="home">Kezdőlap</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-danger animated animatedFadeInUp fadeInUp" href="#about">Rólunk</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-danger animated animatedFadeInUp fadeInUp" routerLink='guns'>Fegyverek</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-danger animated animatedFadeInUp fadeInUp" routerLink='supplementarys'>Kiegészítők</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+            <button class="btn btn-outline-danger me-2 animated animatedFadeInUp fadeInUp" *ngIf="!isLoggedIn" routerLink="register">Regisztráció</button>
+            <button class="btn btn-outline-danger me-2 animated animatedFadeInUp fadeInUp" *ngIf="!isLoggedIn" routerLink="login">Belépés</button>
+            <div *ngIf="isLoggedIn && felhasznalo?.profilkep" class="me-3 animated animatedFadeInUp fadeInUp" ><img src="{{felhasznalo?.profilkep}}" alt="" class="border border-danger rounded-circle" width="40" height="40"></div>
+            <button class="btn btn-outline-danger me-2 animated animatedFadeInUp fadeInUp" *ngIf="isLoggedIn" routerLink="profile">Bejelentkezve: {{felhasznalo?.nev}}</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+ 

@@ -1,0 +1,18 @@
+<div class="login animated animatedFadeInUp fadeInUp">
+    <div class="login_content">
+        <h2 class="mb-5">Belépés</h2>
+        <form #loginForm="ngForm" (ngSubmit)="login()">
+            <div class="form_group">
+                <input type="text" placeholder="Felhasználónév" class="form-control" [(ngModel)]="felhasznalonev" name="felhasznalonev" required />
+            </div>
+            <div class="form_group">
+                <input type="password" placeholder="Jelszó" class="form-control" [(ngModel)]="felhasznalojelszo" name="felhasznalojelszo" required />
+            </div>
+            <button type="submit" class="btn btn-primary">Belépés</button>
+        </form>
+        <div class="text-center" *ngIf="visszajelzes" [ngClass]="{ 'text-danger': hiba, 'text-success': sikeres }">
+            <p class="p-1">{{visszajelzes}}</p>
+            <p *ngIf="sikeres">Átnavigálás a Főoldalra</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+.container{
+    font-family: fantasy;
+    width: 100%;
+    min-width: 400px;
+    margin: 0 auto;
+    background-color: rgba(255, 4, 4, 0.137);
+    color: red;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
