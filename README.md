@@ -37,7 +37,7 @@ Az Airsoft Marketplace egy teljes stack webalkalmazás (Angular frontend + Larav
 
 ## Telepítés
 
-### Backend (Laravel)
+### Backend (Laravel, powershell)
 ```bash
 cd backend_airsoft_marketplace
 composer install
@@ -46,9 +46,9 @@ php artisan serve
 ```
 A backend most elérhető lesz a `http://127.0.0.1:8000` címen.
 
-### Frontend (Angular)
+### Frontend (Angular, cmd)
 ```bash
-cd frontend
+cd Frontend
 npm install
 ng serve
 ```
